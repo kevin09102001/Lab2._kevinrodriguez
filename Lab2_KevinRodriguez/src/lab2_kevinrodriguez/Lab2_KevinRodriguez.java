@@ -36,7 +36,22 @@ public class Lab2_KevinRodriguez {
                 opc = leer.nextInt();
                 switch (opc) {
                     case 1: {
-                       
+                       int opc2=0;
+                       while(opc!=5){
+                           System.out.println("1) Reporte 1");
+                           System.out.println("2) Reporte 2");
+                           System.out.println("3) Reporte 3");
+                           System.out.println("4) Reporte 4");
+                           System.out.println("Ingrese la opcion que desee: ");
+                           opc2=leer.nextInt();
+                           switch(opc2){
+                               case 1:{
+                                   System.out.println("Ingrese el estado que desea ver (Remodelacion, Demolición, o Funcional) : ");
+                                   String estado=leer.next();
+                                   
+                               }
+                           }
+                       }
                     }
                     break;
                     case 2: {
@@ -80,7 +95,7 @@ public class Lab2_KevinRodriguez {
                                     int cantc=leer.nextInt();
                                     System.out.println("Ingrese el Estado del restaurante: \n");
                                     System.out.println("1) Funcional\n"+
-                                                       "2) Remodelacin\n"+
+                                                       "2) Remodelacion\n"+
                                                        "3) Demolicion ");
                                     System.out.println("Ingrese una opcion: ");
                                     int opce=leer.nextInt();
@@ -110,12 +125,16 @@ public class Lab2_KevinRodriguez {
                                 break;
                                 case 2:{
                                       String mostrar = " ";
-                                    for (Object t : restaurant) {
+                                      if (restaurant.size()>=1) {
+                                          for (Object t : restaurant) {
                                              if (t instanceof restaurante) {
                                             mostrar += restaurant.indexOf(t) + "- " + t + "\n";
                                         }
                                     }//fin del for
                                     System.out.println(mostrar);
+                                    }else{
+                                          System.out.println("No hay ningun restaurante a listar. ");
+                                      }
                                 }
                                 break;
                                 case 3:{
@@ -123,6 +142,7 @@ public class Lab2_KevinRodriguez {
                                 }
                                 break;
                                 case 4:{
+                                    if (restaurant.size()>=1) {
                                      System.out.println("Ingrese la posicion que desea eliminar: ");
                                     int posic = leer.nextInt();
                                     if (restaurant.get(posic) instanceof restaurante) {
@@ -130,6 +150,9 @@ public class Lab2_KevinRodriguez {
                                     } else {
                                         System.out.println("La posicion ingresada no es valida");
                                     }//fin del else
+                                    }else{
+                                        System.out.println("No hay ningun restaurante a eliminar. "); 
+                                    }
                                 }
 
                                 break;   
@@ -138,7 +161,7 @@ public class Lab2_KevinRodriguez {
                     }
                     break;
                     case 3: {
-
+                        System.out.println("Adios");
                     }
                     break;
                 }
