@@ -38,7 +38,8 @@ public class Lab2_KevinRodriguez {
                 switch (opc) {
                     case 1: {
                         int opc2 = 0;
-                        while (opc != 5) {
+                        char resp='s';
+                        while (resp=='s' || resp=='S') {
                             System.out.println("1) Reporte 1");
                             System.out.println("2) Reporte 2");
                             System.out.println("3) Reporte 3");
@@ -57,7 +58,7 @@ public class Lab2_KevinRodriguez {
                                             }
                                         }
                                         for (int i = 0; i < funcional.size(); i++) {
-                                            System.out.println(funcional);
+                                            System.out.println(i+") "+funcional);
                                         }
                                     } else {
                                         System.out.println("No hay ningun restaurante a listar. ");
@@ -65,10 +66,35 @@ public class Lab2_KevinRodriguez {
                                 }
                                 break;
                                 case 2: {
-
+                                   if (restaurant.size() >= 1) {
+                                        ArrayList<restaurante> premiun = new ArrayList();
+                                        for (int i = 0; i < restaurant.size(); i++) {
+                                            if (((restaurante) restaurant.get(i)).getES().equalsIgnoreCase("Premiun")) {
+                                            premiun.add((restaurante) restaurant.get(i));
+                                            }
+                                        }
+                                        for (int i = 0; i < premiun.size(); i++) {
+                                            if (premiun.get(i)==restaurant.get(1) &&premiun.get(i)==restaurant.get(2 )&& premiun.get(i)==restaurant.get(9)) {
+                                                System.out.println(premiun);
+                                            }
+                                       }
+                                    } else {
+                                        System.out.println("No hay ningun restaurante a listar. ");
+                                    } 
                                 }
+                                break;
+                                case 3:{
+                                    
+                                }
+                                break;
+                                case 4:{
+                                    
                             }
-                        }
+                                break;
+                            } 
+                            System.out.println("Desea ver otro reporte[S/N]: ");
+                            resp=leer.next().charAt(0);
+                         }
                     }
                     break;
                     case 2: {
@@ -156,7 +182,7 @@ public class Lab2_KevinRodriguez {
                                 break;
                                 case 3:
                                     int opc2 = 0;
-                                    while (opc2 != 11) {
+                                    while (opc2 != 10) {
                                         System.out.println("1) Modificar franquicia\n"
                                                 + "2) Modificar nombre del restuarante\n"
                                                 + "3) Modificar ubicacion del restaurante\n"
