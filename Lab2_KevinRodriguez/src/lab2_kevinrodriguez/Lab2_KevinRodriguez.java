@@ -46,8 +46,24 @@ public class Lab2_KevinRodriguez {
                            opc2=leer.nextInt();
                            switch(opc2){
                                case 1:{
+                                   if (restaurant.size()>=1) {
                                    System.out.println("Ingrese el estado que desea ver (Remodelacion, Demolición, o Funcional) : ");
                                    String estado=leer.next();
+                                      ArrayList<restaurante> funcional = new ArrayList();
+                                      for (int i = 0; i < restaurant.size(); i++) {
+                                       if (((restaurante)restaurant.get(i)).getEstado_Del_Restaurante().equalsIgnoreCase(estado)){
+                                       funcional.add((restaurante)restaurant.get(i));
+                            }
+                           }
+                                      for (int i = 0; i <funcional.size() ; i++) {
+                                          System.out.println(funcional);
+                                   }
+                                   }else{
+                                        System.out.println("No hay ningun restaurante a listar. ");
+                                      }
+                               }
+                               break;
+                               case 2:{
                                    
                                }
                            }
