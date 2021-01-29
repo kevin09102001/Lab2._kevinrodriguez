@@ -20,6 +20,7 @@ public class Lab2_KevinRodriguez {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         ArrayList restaurant = new ArrayList();
         String usuario = "david";
         String contra = "99";
@@ -38,8 +39,8 @@ public class Lab2_KevinRodriguez {
                 switch (opc) {
                     case 1: {
                         int opc2 = 0;
-                        char resp='s';
-                        while (resp=='s' || resp=='S') {
+                        char resp = 's';
+                        while (resp == 's' || resp == 'S') {
                             System.out.println("1) Reporte 1");
                             System.out.println("2) Reporte 2");
                             System.out.println("3) Reporte 3");
@@ -58,7 +59,7 @@ public class Lab2_KevinRodriguez {
                                             }
                                         }
                                         for (int i = 0; i < funcional.size(); i++) {
-                                            System.out.println(i+") "+funcional);
+                                            System.out.println(i + ") " + funcional);
                                         }
                                     } else {
                                         System.out.println("No hay ningun restaurante a listar. ");
@@ -66,39 +67,50 @@ public class Lab2_KevinRodriguez {
                                 }
                                 break;
                                 case 2: {
-                                   if (restaurant.size() >= 1) {
-                                       for (int i = 0; i < restaurant.size(); i++) {
-                                if (((restaurante)restaurant.get(i)).getES().equalsIgnoreCase("Premiun")){
-                                    System.out.println(i+") "+"Nombre del Restaurante: "+((restaurante)restaurant.get(i)).getNombre_restaurante()+" Ubicacion del restaurante: "+((restaurante)restaurant.get(i)).getUbicacion()+" La especialidad del restaurante: "+((restaurante)restaurant.get(i)).getEspecialidad_del_Restaurante());
-                                }
-                                   }
-                                    } else {
-                                        System.out.println("No hay ningun restaurante a listar. ");
-                                    } 
-                                }
-                                break;
-                                case 3:{
-                                   if (restaurant.size() >= 1) {
-                                       System.out.println("Ingrese el nombre de la Franquicia");
-                                        String nombre = leer.next();
-                                    for (int i = 0; i < restaurant.size(); i++) {
-                                        if (((restaurante) restaurant.get(i)).getNombre_Franquicia().equalsIgnoreCase(nombre)) {
-                                             System.out.println("Nombre del Restaurante: "+((restaurante)restaurant.get(i)).getNombre_restaurante()+ " La especialidad del restaurante: "+((restaurante)restaurant.get(i)).getEspecialidad_del_Restaurante()+" Ubicacion del restaurante: "+((restaurante)restaurant.get(i)).getUbicacion());
+                                    if (restaurant.size() >= 1) {
+                                        for (int i = 0; i < restaurant.size(); i++) {
+                                            if (((restaurante) restaurant.get(i)).getES().equalsIgnoreCase("Premiun")) {
+                                                System.out.println(i + ") " + "Nombre del Restaurante: " + ((restaurante) restaurant.get(i)).getNombre_restaurante() + " Ubicacion del restaurante: " + ((restaurante) restaurant.get(i)).getUbicacion() + " La especialidad del restaurante: " + ((restaurante) restaurant.get(i)).getEspecialidad_del_Restaurante());
+                                            }
                                         }
-                                    }
                                     } else {
                                         System.out.println("No hay ningun restaurante a listar. ");
-                                    } 
-                                } 
+                                    }
+                                }
                                 break;
-                                case 4:{
-                                    
+                                case 3: {
+                                    if (restaurant.size() >= 1) {
+                                        System.out.println("Ingrese el nombre de la Franquicia");
+                                        String nombre = leer.next();
+                                        for (int i = 0; i < restaurant.size(); i++) {
+                                            if (((restaurante) restaurant.get(i)).getNombre_Franquicia().equalsIgnoreCase(nombre)) {
+                                                System.out.println("Nombre del Restaurante: " + ((restaurante) restaurant.get(i)).getNombre_restaurante() + " La especialidad del restaurante: " + ((restaurante) restaurant.get(i)).getEspecialidad_del_Restaurante() + " Ubicacion del restaurante: " + ((restaurante) restaurant.get(i)).getUbicacion());
+                                            }
+                                        }
+                                    } else {
+                                        System.out.println("No hay ningun restaurante a listar. ");
+                                    }
+                                }
+                                break;
+                                case 4: {
+                            int gerente=0;
+                            for (int i = 0; i < restaurant.size(); i++) {
+                                for (int j = 0; j < restaurant.size(); j++) {
+                                    if(((restaurante) restaurant.get(i)).getNombre_De_Gerente().equalsIgnoreCase(((restaurante) restaurant.get(j)).getNombre_De_Gerente())){
+                                        gerente ++;
+                                    }
+                                }
+                                if(gerente == 2){
+                                    System.out.println("Nombre del Restaurante: " +((restaurante) restaurant.get(i)).getNombre_restaurante() + "Nombre del Gerente: "+((restaurante) restaurant.get(i)).getNombre_De_Gerente());
+                                }
+                                gerente=0;
                             }
+                                }
                                 break;
-                            } 
+                            }
                             System.out.println("Desea ver otro reporte[S/N]: ");
-                            resp=leer.next().charAt(0);
-                         }
+                            resp = leer.next().charAt(0);
+                        }
                     }
                     break;
                     case 2: {
@@ -113,6 +125,7 @@ public class Lab2_KevinRodriguez {
                             opc1 = leer.nextInt();
                             switch (opc1) {
                                 case 1: {
+                                    String guaru=((restaurante) restaurant.get(0)).getUbicacion();
                                     int cantm = 0;
                                     String nombre = null;
                                     String especi = null;
@@ -123,7 +136,8 @@ public class Lab2_KevinRodriguez {
                                     String res = leer.next();
                                     System.out.println("Ingrese la ubicacion: ");
                                     String ubic = leer.next();
-                                    System.out.println("Ingrese cantidad de empleados: ");
+                                  
+                                          System.out.println("Ingrese cantidad de empleados: ");
                                     int cant = leer.nextInt();
                                     System.out.println("Tiene parqueo mas de 30 carros [S/N]");
                                     char resp = leer.next().charAt(0);
@@ -193,7 +207,7 @@ public class Lab2_KevinRodriguez {
                                                 + "4) Modificar la cantidad de empleados\n"
                                                 + "5) Modificar si es Premium o no"
                                                 + "6) Modificar cantidad de cajeros\n"
-                                                + "7-Modificar cantidad de empleados\n"
+                                                + "7) Modificar cantidad de empleados\n"
                                                 + "8) Modificar nombre del gerente\n"
                                                 + "9) Modificar la especialidad del restaurante\n"
                                                 + "10) Salir\n");
