@@ -67,25 +67,29 @@ public class Lab2_KevinRodriguez {
                                 break;
                                 case 2: {
                                    if (restaurant.size() >= 1) {
-                                        ArrayList<restaurante> premiun = new ArrayList();
-                                        for (int i = 0; i < restaurant.size(); i++) {
-                                            if (((restaurante) restaurant.get(i)).getES().equalsIgnoreCase("Premiun")) {
-                                            premiun.add((restaurante) restaurant.get(i));
-                                            }
-                                        }
-                                        for (int i = 0; i < premiun.size(); i++) {
-                                            if (premiun.get(i)==restaurant.get(1) &&premiun.get(i)==restaurant.get(2 )&& premiun.get(i)==restaurant.get(9)) {
-                                                System.out.println(premiun);
-                                            }
-                                       }
+                                       for (int i = 0; i < restaurant.size(); i++) {
+                                if (((restaurante)restaurant.get(i)).getES().equalsIgnoreCase("Premiun")){
+                                    System.out.println(i+") "+"Nombre del Restaurante: "+((restaurante)restaurant.get(i)).getNombre_restaurante()+" Ubicacion del restaurante: "+((restaurante)restaurant.get(i)).getUbicacion()+" La especialidad del restaurante: "+((restaurante)restaurant.get(i)).getEspecialidad_del_Restaurante());
+                                }
+                                   }
                                     } else {
                                         System.out.println("No hay ningun restaurante a listar. ");
                                     } 
                                 }
                                 break;
                                 case 3:{
-                                    
-                                }
+                                   if (restaurant.size() >= 1) {
+                                       System.out.println("Ingrese el nombre de la Franquicia");
+                                        String nombre = leer.next();
+                                    for (int i = 0; i < restaurant.size(); i++) {
+                                        if (((restaurante) restaurant.get(i)).getNombre_Franquicia().equalsIgnoreCase(nombre)) {
+                                             System.out.println("Nombre del Restaurante: "+((restaurante)restaurant.get(i)).getNombre_restaurante()+ " La especialidad del restaurante: "+((restaurante)restaurant.get(i)).getEspecialidad_del_Restaurante()+" Ubicacion del restaurante: "+((restaurante)restaurant.get(i)).getUbicacion());
+                                        }
+                                    }
+                                    } else {
+                                        System.out.println("No hay ningun restaurante a listar. ");
+                                    } 
+                                } 
                                 break;
                                 case 4:{
                                     
